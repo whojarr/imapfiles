@@ -1,5 +1,29 @@
 #!/usr/bin/python
-"""connect to an imap server and download the attachements from a specified folder"""
+"""
+Copyright (C) 2011 by Digital Creation Ltd
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+
+This script will connect to an imap server and download the attachements from a specified folder
+then archive them to a specified folder.
+"""
 
 import email
 import ConfigParser
@@ -14,9 +38,6 @@ def connect(server, username, password):
     connection = imaplib.IMAP4_SSL(server)
     connection.login(username, password)
     return connection
-
-def mkdir(folder):
-    print 'make folder ', folder
 
 class ImapFiles:
     """ Main class that connects to imap server and downloads attachments """
@@ -132,7 +153,7 @@ if __name__ == '__main__':
     else:
         if not OPTIONS.server and not OPTIONS.username and not OPTIONS.password and not OPTIONS.folder and not OPTIONS.destination:
             PARSER.print_help()
-            print('  Require -s SERVER -u USERNAME -p PASSWORD -f FILE -d DESTIATION if -c CONFIG not supplied')
+            print('  Require -s SERVER -u USERNAME -p PASSWORD -f FOLDER -d DESTIATION if -c CONFIG not supplied')
             sys.exit(1)
         else:
             IMAPFILES.server = OPTIONS.server
