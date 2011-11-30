@@ -1,0 +1,52 @@
+imapfiles Version 0.1
+https://github.com/whojarr/imapfiles/
+
+Contact:
+Digital Creation Ltd
+dhunter@digitalcreation.co.nz
+
+Imapfiles was developed as free software to download the attachments contained in emails on an imap server and optionally
+archive those messages to another imap folder once processed.
+
+The python code works from the command line or as a module for use in other python scripts.
+
+Usage: imapfiles [OPTIONS]
+
+Options:
+
+-c, --config
+    path to a ini style config file. e.g.
+    
+    [general]
+    destination=./files
+    [imap]
+    server=localhost
+    username=username
+    password=password
+    folder=INBOX
+    archive=archive
+
+-s, --server
+    imap server name or ip address
+
+-u, --username
+    imap users name
+
+-p, --password
+    imap users password
+
+-f, --folder
+    imap folder to download attachemnts from
+
+-d, --destination
+    local directory to store downloaded attachments.
+    attachments are stored in date folders (bnsed on the emails sent date) with sub folders for each message.
+
+-a, --archive
+    you can optionally specify an imap folder to archive processed emails to avoid having to process all messages
+    time the command is run
+
+Examples:
+
+python ./imapfiles -c imapfiles.cfg
+python ./imapfiles -s localhost -u username -p password -f INBOX -d localdirectory
