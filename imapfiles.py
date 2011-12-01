@@ -40,15 +40,24 @@ def connect(server, username, password):
     return connection
 
 class ImapFiles:
-    """ Main class that connects to imap server and downloads attachments """
-    def __init__(self):
-        self.destination_folder = '.'
-        self.config_file = None
-        self.server = 'imap.gmail.com'
-        self.username = ''
-        self.password = ''
-        self.imap_folder = ''
-        self.imap_folder_archive = None
+    """
+    Main class that connects to imap server and downloads attachments.
+    
+    If you provide a configuration file, it will overwrite any settings
+    you provide in the 
+    """
+    def __init__(self, destination_folder='.', config_file=None, server='imap.gmail.com', 
+                 username='', password='', imap_folder='', imap_folder_archive=''):
+        self.destination_folder = destination_folder
+        self.config_file = config_file
+        self.server = server
+        self.username = username
+        self.password = password
+        self.imap_folder = imap_folder
+        self.imap_folder_archive = imap_folder_archive
+        if config_file:
+            self.load_config_file(config_file)
+            
 
     def load_config_file(self, config_file):
         """ Set values used from a specified config file """
