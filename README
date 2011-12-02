@@ -6,10 +6,12 @@ Copyright (C) 2011 Digital Creation Ltd
 
 For license information, see LICENSE.txt
 
-Imapfiles was developed as free software to download the attachments contained in emails on an imap server and optionally
+Imapfiles was developed as free software to download the attachments contained in emails on an IMAP capable email server and optionally
 archive those messages to another imap folder once processed.
 
+
 The python code can be used from the command line or as a module for use in other python scripts.
+
 
 Usage: imapfiles [OPTIONS]
 
@@ -44,8 +46,8 @@ Options:
     attachments are stored in date folders (bnsed on the emails sent date) with sub folders for each message.
 
 -a, --archive
-    you can optionally specify an imap folder to archive processed emails to avoid having to process all messages
-    time the command is run
+    you can optionally specify an existing imap folder to archive processed emails to avoid downloading attachments again
+    the next time this is performed.
 
 Examples:
 
