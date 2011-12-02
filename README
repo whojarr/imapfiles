@@ -1,14 +1,15 @@
-imapfiles Version 0.1
-https://github.com/whojarr/imapfiles/
+imapfiles    https://github.com/whojarr/imapfiles/
 
-Contact:
-Digital Creation Ltd
-dhunter@digitalcreation.co.nz
+Contact: David Hunter <dhunter@digitalcreation.co.nz>
+
+Copyright (C) 2011 Digital Creation Ltd 
+
+For license information, see LICENSE.txt
 
 Imapfiles was developed as free software to download the attachments contained in emails on an imap server and optionally
 archive those messages to another imap folder once processed.
 
-The python code works from the command line or as a module for use in other python scripts.
+The python code can be used from the command line or as a module for use in other python scripts.
 
 Usage: imapfiles [OPTIONS]
 
